@@ -14,9 +14,9 @@ public:
         unordered_map<int, int> m; 
 
         for (int i = 0; i < nums.size(); i++) {
-            int diff = target - nums[i];
-            if (m.find(diff) != m.end()) {
-                return {m[diff], i};
+            // int diff = target - nums[i];
+            if (m.find(target - nums[i]) != m.end()) {
+                return {m[target - nums[i]], i};
             }
             m.insert({nums[i], i});
         }
