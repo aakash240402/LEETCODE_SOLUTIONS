@@ -11,15 +11,14 @@ public:
         //     }
         // }
         // return ans;
-        int n = nums.size();
-        unordered_map<int, int> prevMap; 
+        unordered_map<int, int> m; 
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < nums.size(); i++) {
             int diff = target - nums[i];
-            if (prevMap.find(diff) != prevMap.end()) {
-                return {prevMap[diff], i};
+            if (m.find(diff) != m.end()) {
+                return {m[diff], i};
             }
-            prevMap.insert({nums[i], i});
+            m.insert({nums[i], i});
         }
         return {};
     }
